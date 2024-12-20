@@ -8,19 +8,14 @@ function App() {
         name: "Dr. Patricio Martínez",
         specialty: "Cardiología",
         experience: 4,
-        availability: "Lunes a Viernes, 9 AM - 5 PM",
+        availability: "Lunes y viernes",
         contact: {
             telefono: "123-456-7890",
             email: "patricio.martinez@centromedico.com"
         },
         schedule: {
-            lunes: "9 AM - 5 PM",
-            martes: "9 AM - 5 PM",
-            miercoles: "9 AM - 5 PM",
-            jueves: "9 AM - 5 PM",
-            viernes: "9 AM - 5 PM",
-            sabado: "Cerrado",
-            domingo: "Cerrado"
+            lunes: "9:00 AM - 15:00 PM",
+            viernes: "10:00 AM - 13:00 PM",
         },
         image: docImage
     };

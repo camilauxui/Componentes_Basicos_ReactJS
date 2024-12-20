@@ -1,7 +1,18 @@
 .doctor-card {  
     border: 1px solid #ccc;  
-    border-radius: 8px;  
-    padding: 16px;  
+    border-radius: 18px;    
     margin: 16px;  
     background-color: #f9f9f9;  
+    padding: 2rem; 
+    border: 0px solid #2472bc;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);  
+    margin-bottom: 5px; 
 }
+
+.doctor-image {   
+    object-fit: cover; 
+    margin-top: -70px;
+    width: 90px; 
+    border-radius: 80px;
+    border: 2px solid #2472bc; 
+}  

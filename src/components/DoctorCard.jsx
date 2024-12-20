@@ -11,15 +11,14 @@ const DoctorCard = ({ name, specialty, experience, availability, contact, schedu
             <p><strong>Años de experiencia:</strong> {experience}</p>
             <p><strong>Disponibilidad:</strong> {availability}</p>
             <div>
-                <h4>Horarios:</h4>
-                <ul>
+                <p><strong>Horarios:</strong></p>
                     {Object.entries(schedule).map(([day, hours]) => (
-                        <li key={day}><strong>{day.charAt(0).toUpperCase() + day.slice(1)}:</strong> {hours}</li>
+                        <li key={day}><strong>{day.charAt(0)+ day.slice(1)}:</strong> {hours}</li>
                     ))}
-                </ul>
+               
             </div>
             <div>
-                <h4>Contacto:</h4>
+                <p><strong>Contacto:</strong></p>
                 <p><strong>Teléfono:</strong> {contact.telefono}</p>
                 <p><strong>Email:</strong> {contact.email}</p>
             </div>
