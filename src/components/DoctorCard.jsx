@@ -2,20 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';  
 import './DoctorCard.css'; 
 
-const DoctorCard = ({ name, specialty, experience }) => {  
-    return (  
-        <div className="doctor-card">  
-            <h2>{name}</h2>  
-            <p>Especialidad: {specialty}</p>  
-            <p>Años de experiencia: {experience}</p>  
-        </div>  
-    );  
-};  
+const DoctorCard = ({ name, specialty, experience, availability, contact, schedule, image }) => {
+    return (
+        <div className="doctor-card">
+            <img src={image} alt={`Imagen de ${name}`} className="doctor-image" />
+            <h2>{name}</h2>
+            <p><strong>Especialidad:</strong> {specialty}</p>
+            <p><strong>Años de experiencia:</strong> {experience}</p>
+            <p><strong>Disponibilidad:</strong> {availability}</p>
+            <div>
+                <h4>Horarios:</h4>
+                <ul>
+                    {Object.entries(schedule).map(([day, hours]) => (
+                        <li key={day}><strong>{day.charAt(0).toUpperCase() + day.slice(1)}:</strong> {hours}</li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto:</h4>
+                <p><strong>Teléfono:</strong> {contact.telefono}</p>
+                <p><strong>Email:</strong> {contact.email}</p>
+            </div>
+        </div>
+    );
+};
 
-DoctorCard.propTypes = {  
-    name: PropTypes.string.isRequired,  
-    specialty: PropTypes.string.isRequired,  
-    experience: PropTypes.number.isRequired,  
-};  
+DoctorCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    specialty: PropTypes.string.isRequired,
+    experience: PropTypes.number.isRequired,
+    availability: PropTypes.string.isRequired,
+    contact: PropTypes.shape({
+        telefono: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired
+    }).isRequired,
+    schedule: PropTypes.object.isRequired,
+    image: PropTypes.string.isRequired
+};
 
 export default DoctorCard;
