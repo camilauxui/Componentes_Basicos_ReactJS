@@ -26,3 +26,8 @@ El componente utiliza el archivo DoctorCard.css para aplicar estilos.
 ## Validación
 Utiliza "PropTypes" para validar que se entregue la información.
 
+# Componente DoctorList
+Agrupa todas las cards de los doctores 
+
+# Componente ServiceList
+Contiene la secciòn Servicios médicos. 
