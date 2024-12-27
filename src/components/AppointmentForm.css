@@ -38,3 +38,12 @@
 .appointment-form button:hover {  
     background-color: #747aeb;  
 }
+
+.confirmation-message {  
+    margin-top: 20px;  
+    padding: 10px;  
+    border: 1px solid #28a745;  
+    border-radius: 5px;  
+    background-color: #d4edda;  
+    color: #155724;  
+}
