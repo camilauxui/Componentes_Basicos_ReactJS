@@ -1,5 +1,5 @@
 import React, { useState } from 'react';  
-import './AppointmentForm.css'; 
+import './AppointmentForm.css';   
 
 const AppointmentForm = () => {  
     const [formData, setFormData] = useState({  
@@ -8,7 +8,10 @@ const AppointmentForm = () => {
         phone: '',  
         doctor: '',  
         date: '',  
+        time: '',  
     });  
+
+    const [confirmationMessage, setConfirmationMessage] = useState(''); // Estado para el mensaje de confirmación  
 
     const handleChange = (e) => {  
         const { name, value } = e.target;  
@@ -17,8 +20,12 @@ const AppointmentForm = () => {
 
     const handleSubmit = (e) => {  
         e.preventDefault();  
-        // acà se puede configurar el envío del formulario
         console.log('Cita agendada:', formData);  
+
+        // Mensaje de confirmación  
+        const message = `Nombre del paciente: ${formData.name}. Usted tiene cita con ${formData.doctor} el día ${formData.date} a las ${formData.time}.`;  
+        setConfirmationMessage(message); 
+
         // Resetear el formulario  
         setFormData({  
             name: '',  
@@ -26,6 +33,7 @@ const AppointmentForm = () => {
             phone: '',  
             doctor: '',  
             date: '',  
+            time: '',  
         });  
     };  
 
@@ -97,8 +105,28 @@ const AppointmentForm = () => {
                     />  
                 </div>  
 
+                <div>  
+                    <label htmlFor="time">Hora:</label>  
+                    <input  
+                        type="time"  
+                        id="time"  
+                        name="time"  
+                        value={formData.time}  
+                        onChange={handleChange}  
+                        required  
+                    />  
+                </div>  
+
                 <button type="submit">Agendar Cita</button>  
             </form>  
+
+            {/* Mostrar mensaje de confirmación */}  
+            {confirmationMessage && (  
+                <div className="confirmation-message">  
+                    <h3>Su hora médica ha sido agendada correctamente</h3>  
+                    <p>{confirmationMessage}</p>  
+                </div>  
+            )}  
         </section>  
     );  
 };  
