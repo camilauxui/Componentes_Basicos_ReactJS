@@ -1,11 +1,12 @@
 import React from 'react';  
-import DoctorCard from './DoctorCard';  // Asegúrate de que la ruta sea correcta  
+import DoctorCard from './DoctorCard';  
 import pMartinezImage from '../assets/doc1.jpg'; // Dr. Patricio Martínez  
 import mSilvaImage from '../assets/dra1.jpg'; // Dra. Matilde Silva  
 import carlosImage from '../assets/doc2.jpg'; // Dr. Carlos Andrés Ruiz   
 
 const doctors = [  
     {  
+        id: 1,  // ID del doctor
         name: "Dr. Patricio Martínez",  
         specialty: "Cardiología",  
         experience: 4,  
@@ -15,12 +16,13 @@ const doctors = [
             email: "p.martinez@centromedico.com"  
         },  
         schedule: {  
-            lunes: "9:00 AM - 15:00 PM",  
-            viernes: "10:00 AM - 13:00 PM",  
+            lunes: "9:00 AM - 3:00 PM",  
+            viernes: "10:00 AM - 1:00 PM"  
         },  
         image: pMartinezImage  
     },  
     {  
+        id: 2,  // ID del doctor
         name: "Dra. Matilde Silva",  
         specialty: "Pediatría",  
         experience: 3,  
@@ -36,6 +38,7 @@ const doctors = [
         image: mSilvaImage  
     },  
     {  
+        id: 3,  // ID del doctor
         name: "Dr. Carlos Andrés Ruiz",  
         specialty: "Neurología",  
         experience: 26,  
@@ -55,9 +58,9 @@ const doctors = [
 const DoctorList = () => {  
     return (  
         <div className="doctor-cards-container">  
-            {doctors.map((doctor, index) => (  
+            {doctors.map((doctor) => (  
                 <DoctorCard   
-                    key={index}  
+                    key={doctor.id}  // Usa el id como key  
                     name={doctor.name}  
                     specialty={doctor.specialty}  
                     experience={doctor.experience}  
