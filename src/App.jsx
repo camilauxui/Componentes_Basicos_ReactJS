@@ -1,6 +1,7 @@
 import React from 'react';  
 import ServiceList from './components/ServiceList';   
 import DoctorList from './components/DoctorList'; 
+import AppointmentForm from './components/AppointmentForm';
 
 function App() {  
     return (  
@@ -10,6 +11,8 @@ function App() {
             <div><ServiceList /> </div>
              <br />
             <div><DoctorList />  </div>
+            <br />
+            <AppointmentForm />
         </>  
     );  
 }  

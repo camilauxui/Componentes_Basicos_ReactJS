@@ -2,7 +2,7 @@
 
 ## 1- Desarrollo de Componentes Básicos con ReactJS para el Proyecto del Hospital 
 
-# Componente DoctorCard
+# 1-Componente DoctorCard
 Muestra información detallada sobre un médico.
 
 ## Props  
@@ -26,8 +26,8 @@ El componente utiliza el archivo DoctorCard.css para aplicar estilos.
 ## Validación
 Utiliza "PropTypes" para validar que se entregue la información.
 
-# Componente DoctorList
+# 2 Componente DoctorList
 Agrupa todas las cards de los doctores 
 
-# Componente ServiceList
+# 3 Componente ServiceList
 Contiene la secciòn Servicios médicos. 
