@@ -11,7 +11,7 @@ const ServiceList = ({ services }) => {
             <br /><br />  
             <div className="services-grid">  
                 {services.map((service) => (  
-                    <article className="services-item" key={service.id}>
+                    <article className="services-item" key={service.id}>  
                         <img  
                             src={service.image}   
                             alt={service.title}  
